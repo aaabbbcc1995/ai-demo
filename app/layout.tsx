@@ -4,6 +4,7 @@ import {Metadata} from "next"
 import {siteConfig} from "@/config/site"
 import {fontSans} from "@/lib/fonts"
 import {cn} from "@/lib/utils"
+import {UserInfoContextProvider} from "./context/userinfo";
 
 export const metadata: Metadata = {
   title: {
@@ -37,7 +38,9 @@ export default function RootLayout({children}: RootLayoutProps) {
           fontSans.variable
         )}
       >
+      <UserInfoContextProvider>
         {children}
+      </UserInfoContextProvider>
       </body>
       </html>
     </>

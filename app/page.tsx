@@ -1,7 +1,15 @@
 "use client"
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar"
+import {Button} from "@/components/ui/button"
+import {
+  Dialog,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import DialogCpn from "@/components/dialog";
+import { useState } from "react";
 
 export default function IndexPage() {
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <div className="flex h-[100vh] w-[100vw] flex-col items-center justify-center bg-[#afafaf]">
@@ -14,6 +22,14 @@ export default function IndexPage() {
           <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn"/>
           <AvatarFallback>^_^</AvatarFallback>
         </Avatar>
+        <Dialog open={open} onOpenChange={setOpen}>
+          <DialogTrigger asChild>
+            <Button className='mt-[7vh] bg-[#afafaf]'>
+              Sign in with Google
+            </Button>
+          </DialogTrigger>
+          <DialogCpn setOpen={setOpen} open={open}/>
+        </Dialog>
       </div>
     </div>
   )
