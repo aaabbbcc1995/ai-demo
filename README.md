@@ -8,6 +8,26 @@ A Next.js 13 template for building apps with Radix UI and Tailwind CSS.
 npx create-next-app -e https://github.com/shadcn/next-template
 ```
 
+## install
+
+```bash
+npm install
+```
+
+## run project
+
+```bash
+npm run dev
+```
+
+## how to login
+
+```bash
+you can login by
+username: any string with length more than one character
+password: any string with length more than one character
+```
+
 ## Features
 
 - Next.js 13 App Directory
